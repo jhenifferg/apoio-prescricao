@@ -1,0 +1,28 @@
+[
+  {
+    "id": "exemplo_001",
+    "nome": "Medicamento demonstrativo A",
+    "substancia_ativa": "Substância fictícia A",
+    "apresentacao": "Solução de exemplo",
+    "via": "Não definida",
+    "estado_revisao": "Dados fictícios",
+    "regras_posologicas": [],
+    "fonte": {
+      "documento": "",
+      "url": ""
+    }
+  },
+  {
+    "id": "exemplo_002",
+    "nome": "Medicamento demonstrativo B",
+    "substancia_ativa": "Substância fictícia B",
+    "apresentacao": "Comprimido de exemplo",
+    "via": "Não definida",
+    "estado_revisao": "Dados fictícios",
+    "regras_posologicas": [],
+    "fonte": {
+      "documento": "",
+      "url": ""
+    }
+  }
+]
