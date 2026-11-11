@@ -1,28 +1,78 @@
 [
+
   {
-    "id": "exemplo_001",
-    "nome": "Medicamento demonstrativo A",
-    "substancia_ativa": "Substância fictícia A",
-    "apresentacao": "Solução de exemplo",
-    "via": "Não definida",
-    "estado_revisao": "Dados fictícios",
-    "regras_posologicas": [],
-    "fonte": {
-      "documento": "",
-      "url": ""
+    "id": "augmentin_duo_400_57_5ml",
+    "nome": "Augmentin Duo",
+    "substancia_ativa": "Amoxicilina + ácido clavulânico",
+    "apresentacao": "400 mg/57 mg/5 ml, pó para suspensão oral (sabor a morango)",
+    "via": "Oral",
+    "estado_revisao": "Extração preliminar — por rever",
+    "concentracao": {
+      "volume_referencia_ml": 5,
+      "componentes": [
+        {
+          "substancia": "Amoxicilina",
+          "quantidade_mg": 400
+        },
+        {
+          "substancia": "Ácido clavulânico",
+          "quantidade_mg": 57
+        }
+      ]
+    },
+
+      "verificacoes": [
+    {
+      "id": "idade_inferior_2_meses",
+      "parametro": "idade_meses",
+      "operador": "<",
+      "limite": 2,
+      "mensagem": "Idade inferior a 2 meses: o RCM não permite recomendar uma dose desta formulação por ausência de dados clínicos.",
+      "fonte": "RCM, secção 4.2, página 3"
+    },
+    {
+      "id": "idade_inferior_2_anos",
+      "parametro": "idade_meses",
+      "operador": "<",
+      "limite": 24,
+      "mensagem": "Idade inferior a 2 anos: não existem dados clínicos para doses superiores a 45 mg/6,4 mg/kg/dia desta formulação. Esta limitação refere-se às doses mais elevadas, não a toda a utilização.",
+      "fonte": "RCM, secção 4.2, página 3"
+    },
+    {
+      "id": "peso_igual_superior_40",
+      "parametro": "peso_kg",
+      "operador": ">=",
+      "limite": 40,
+      "mensagem": "Peso igual ou superior a 40 kg: o RCM orienta para formulações de adulto. Não aplicar automaticamente o esquema pediátrico para crianças com menos de 40 kg.",
+      "fonte": "RCM, secção 4.2, página 2"
     }
-  },
-  {
-    "id": "exemplo_002",
-    "nome": "Medicamento demonstrativo B",
-    "substancia_ativa": "Substância fictícia B",
-    "apresentacao": "Comprimido de exemplo",
-    "via": "Não definida",
-    "estado_revisao": "Dados fictícios",
-    "regras_posologicas": [],
+  ],
+    "regras_posologicas": [
+      {
+        "id": "augmentin_duo_otite_habitual",
+        "indicacao": "Otite média aguda",
+        "tipo_esquema": "Habitual",
+        "posologia_texto": "25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia, divididos em duas administrações.",
+        "dose_amoxicilina": {
+          "minimo": 25,
+          "maximo": 45,
+          "unidade": "mg/kg/dia",
+          "administracoes_dia": 2
+        },
+        "estado_validacao": "Por rever",
+        "fonte": {
+          "secao": "4.2",
+          "paginas": [2, 3]
+        }
+      }
+    ],
     "fonte": {
-      "documento": "",
-      "url": ""
+      "documento": "RCM de Augmentin Duo 400 mg/57 mg/5 ml",
+      "url": "",
+      "ficheiro": "documento.pdf",
+      "secao_concentracao": "2",
+      "pagina_concentracao": 1,
+      "data_revisao": null
     }
   }
 ]
