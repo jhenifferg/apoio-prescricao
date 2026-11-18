@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-PT">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apoio à prescrição</title>
+<link rel="stylesheet" href="/style.css">
+<header><div>Apoio à prescrição</div><span>Protótipo académico · Casos fictícios</span></header>
+<main>
+<section class="intro"><h1>Cálculo de dose</h1><p>Preenche o episódio e escolhe uma apresentação.</p></section>
+<div class="layout">
+<aside>
+<section class="card"><h2>Episódio</h2><div class="duo">
+<label>Idade<input id="idade" type="number" min="0" step="any"></label>
+<label>Peso em kg<input id="peso" type="number" min="0.01" step="any"></label>
+</div><label>Unidade da idade<select id="unidade_idade"><option>Anos</option><option>Meses</option><option>Dias</option></select></label><div class="checks"><label><input id="gravidez" type="checkbox"> Grávida</label><label><input id="aleitamento" type="checkbox"> Em aleitamento</label></div></section>
+<section class="card"><h2>Medicamento</h2>
+<label>Pesquisar<input id="pesquisa" type="search" autocomplete="off" aria-controls="sugestoes" placeholder="Nome ou substância ativa"></label>
+<div id="sugestoes"></div><input id="medicamento" type="hidden"></section>
+</aside>
+<article><section class="card"><h2 id="titulo">Ficha do medicamento</h2><p id="apresentacao"></p>
+<div id="materna"></div><div id="perguntas"></div><div id="resultado" aria-live="polite"></div>
+</section></article>
+</div>
+</main>
+<script src="/app.js" defer></script>
+</html>

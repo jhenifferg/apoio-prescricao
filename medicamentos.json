@@ -1,78 +1,802 @@
 [
-
   {
     "id": "augmentin_duo_400_57_5ml",
     "nome": "Augmentin Duo",
-    "substancia_ativa": "Amoxicilina + ácido clavulânico",
-    "apresentacao": "400 mg/57 mg/5 ml, pó para suspensão oral (sabor a morango)",
-    "via": "Oral",
-    "estado_revisao": "Extração preliminar — por rever",
-    "concentracao": {
-      "volume_referencia_ml": 5,
-      "componentes": [
-        {
-          "substancia": "Amoxicilina",
-          "quantidade_mg": 400
-        },
-        {
-          "substancia": "Ácido clavulânico",
-          "quantidade_mg": 57
-        }
-      ]
-    },
-
-      "verificacoes": [
-    {
-      "id": "idade_inferior_2_meses",
-      "parametro": "idade_meses",
-      "operador": "<",
-      "limite": 2,
-      "mensagem": "Idade inferior a 2 meses: o RCM não permite recomendar uma dose desta formulação por ausência de dados clínicos.",
-      "fonte": "RCM, secção 4.2, página 3"
-    },
-    {
-      "id": "idade_inferior_2_anos",
-      "parametro": "idade_meses",
-      "operador": "<",
-      "limite": 24,
-      "mensagem": "Idade inferior a 2 anos: não existem dados clínicos para doses superiores a 45 mg/6,4 mg/kg/dia desta formulação. Esta limitação refere-se às doses mais elevadas, não a toda a utilização.",
-      "fonte": "RCM, secção 4.2, página 3"
-    },
-    {
-      "id": "peso_igual_superior_40",
-      "parametro": "peso_kg",
-      "operador": ">=",
-      "limite": 40,
-      "mensagem": "Peso igual ou superior a 40 kg: o RCM orienta para formulações de adulto. Não aplicar automaticamente o esquema pediátrico para crianças com menos de 40 kg.",
-      "fonte": "RCM, secção 4.2, página 2"
-    }
-  ],
-    "regras_posologicas": [
+    "apresentacao": "400 mg/57 mg/5 ml — suspensão oral",
+    "estado": "por_rever",
+    "regras": [
       {
-        "id": "augmentin_duo_otite_habitual",
-        "indicacao": "Otite média aguda",
-        "tipo_esquema": "Habitual",
-        "posologia_texto": "25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia, divididos em duas administrações.",
-        "dose_amoxicilina": {
+        "id": "idade_minima",
+        "condicao": {
+          "parametro": "idade_meses",
+          "operador": "<",
+          "valor": 2
+        },
+        "tipo": "bloqueio",
+        "mensagem": "Menos de 2 meses: sem recomendação de dose desta formulação no RCM.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: idade_minima"
+      },
+      {
+        "id": "idade_dose_elevada",
+        "condicao": {
+          "parametro": "idade_meses",
+          "operador": "<",
+          "valor": 24
+        },
+        "tipo": "atencao",
+        "mensagem": "Menos de 2 anos: ausência de dados para doses superiores a 45/6,4 mg/kg/dia; não é uma proibição de todo o uso.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: idade_dose_elevada"
+      },
+      {
+        "id": "peso_formulacao",
+        "condicao": {
+          "parametro": "peso_kg",
+          "operador": ">=",
+          "valor": 40
+        },
+        "tipo": "bloqueio",
+        "mensagem": "Peso ≥40 kg: o RCM orienta para formulações de adulto. Este esquema pediátrico não será calculado.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: peso_formulacao"
+      },
+      {
+        "id": "renal_restricao",
+        "condicao": {
+          "parametro": "clcr_ml_min",
+          "operador": "<",
+          "valor": 30
+        },
+        "tipo": "bloqueio",
+        "mensagem": "ClCr <30 ml/min: formulação 7:1 não recomendada; o RCM não fornece ajuste de dose.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: renal_restricao"
+      },
+      {
+        "id": "renal_limite",
+        "condicao": {
+          "parametro": "clcr_ml_min",
+          "operador": "==",
+          "valor": 30
+        },
+        "tipo": "bloqueio",
+        "mensagem": "ClCr =30 ml/min: igualdade não explicitada no documento; requer esclarecimento.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: renal_limite"
+      },
+      {
+        "id": "renal_sem_ajuste",
+        "condicao": {
+          "parametro": "clcr_ml_min",
+          "operador": ">",
+          "valor": 30
+        },
+        "tipo": "informacao",
+        "mensagem": "ClCr >30 ml/min: sem ajuste renal segundo a secção 4.2; isto não aprova a prescrição.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: renal_sem_ajuste"
+      },
+      {
+        "id": "hepatico",
+        "condicao": {
+          "parametro": "funcao_hepatica",
+          "operador": "==",
+          "valor": "Compromisso hepático referido"
+        },
+        "tipo": "bloqueio",
+        "mensagem": "Compromisso hepático: precaução e monitorização. Sem ajuste numérico no RCM; cálculo suspenso neste protótipo.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: hepatico"
+      },
+      {
+        "id": "hepatico_desconhecido",
+        "condicao": {
+          "parametro": "funcao_hepatica",
+          "operador": "==",
+          "valor": "Não informada"
+        },
+        "tipo": "bloqueio",
+        "mensagem": "Situação hepática não informada; completar avaliação.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: hepatico_desconhecido"
+      },
+      {
+        "id": "alergia",
+        "condicao": {
+          "parametro": "alergia_relevante",
+          "operador": "==",
+          "valor": "Sim"
+        },
+        "tipo": "bloqueio",
+        "mensagem": "Hipersensibilidade relevante referida: consultar contraindicações da secção 4.3.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.3",
+          "paginas": [
+            4
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.3 Contraindicações\n\n\nHipersensibilidade às substâncias ativas, a qualquer penicilina ou a qualquer um dos\nexcipientes mencionados na secção 6.1.\n\nHistória de reação grave de hipersensibilidade imediata (por exemplo, anafilaxia) a\noutro agente beta-lactâmico (por exemplo, cefalosporinas, carbapenemes,\nmonobactam).\n\nHistória de icterícia/compromisso hepático devido a amoxicilina/ácido clavulânico (ver\nsecção 4.8).\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: alergia"
+      },
+      {
+        "id": "alergia_desconhecida",
+        "condicao": {
+          "parametro": "alergia_relevante",
+          "operador": "==",
+          "valor": "Não avaliada"
+        },
+        "tipo": "bloqueio",
+        "mensagem": "História de hipersensibilidade não avaliada.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: alergia_desconhecida"
+      },
+      {
+        "id": "historia_hepatica",
+        "condicao": {
+          "parametro": "historia_hepatica_associada",
+          "operador": "==",
+          "valor": "Sim"
+        },
+        "tipo": "bloqueio",
+        "mensagem": "História de icterícia/compromisso hepático devido a amoxicilina/clavulanato: contraindicação no RCM.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.3",
+          "paginas": [
+            4
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.3 Contraindicações\n\n\nHipersensibilidade às substâncias ativas, a qualquer penicilina ou a qualquer um dos\nexcipientes mencionados na secção 6.1.\n\nHistória de reação grave de hipersensibilidade imediata (por exemplo, anafilaxia) a\noutro agente beta-lactâmico (por exemplo, cefalosporinas, carbapenemes,\nmonobactam).\n\nHistória de icterícia/compromisso hepático devido a amoxicilina/ácido clavulânico (ver\nsecção 4.8).\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: historia_hepatica"
+      },
+      {
+        "id": "historia_hepatica_desconhecida",
+        "condicao": {
+          "parametro": "historia_hepatica_associada",
+          "operador": "==",
+          "valor": "Não avaliada"
+        },
+        "tipo": "bloqueio",
+        "mensagem": "Avaliar história de icterícia/compromisso hepático associado ao medicamento.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: historia_hepatica_desconhecida"
+      },
+      {
+        "id": "probenecida",
+        "condicao": {
+          "parametro": "uso_probenecida",
+          "operador": "==",
+          "valor": "Sim"
+        },
+        "tipo": "bloqueio",
+        "mensagem": "Administração concomitante de probenecida não recomendada no RCM. Cálculo suspenso neste protótipo.",
+        "fonte": {
+          "documento": "documento.pdf",
+          "secao": "4.5",
+          "paginas": [
+            7
+          ],
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.5 Interações medicamentosas e outras formas de interação\n\nAnticoagulantes orais\n\nAnticoagulantes orais e antibióticos da família da penicilina têm sido amplamente\nutilizados na práctica clínica sem notificações de interação. Contudo, na literatura\nexistem casos de aumento da relação normalizada internacional em doentes a tomar\nacenocoumarol ou varfarina aos quais foi prescrita uma terapêutica de amoxicilina. Se a\nadministração concomitante for necessária, o tempo de protrombina ou a relação\nnormalizada internacional deve ser cuidadosamente monitorizada com a adição ou\nretirada da amoxicilina. Adicionalmente, ajustes na dose dos anticoagulantes orais\npoderão ser necessários (ver secções 4.4 e 4.8).\n\nMetotrexato\n\nAs penicilinas podem reduzir a excreção do metotrexato provocando um potencial\naumento da toxicidade.\n\nProbenecida\n\nNão se recomenda a administração concomitante de probenecida. A probenecida\ndiminui a secreção tubular renal da amoxicilina. O seu concomitante de probenecida\ncom amoxicilina/ácido clavulânico pode resultar no aumento e prolongamento dos\nníveis sanguíneos da amoxicilina, mas não dos do ácido clavulânico.\n\nMicofenolato de mofetil\n\nEm doentes a tomar micofenolato de mofetil, após o início de amoxicilina mais ácido\nclavulânico por via oral, foi notificada uma redução de aproximadamente 50% na\nconcentração pré-dose do metabolito ativo ácido micofenólico (AMF). A alteração do\nnível da pré-dose poderá não representar com precisão alterações na exposição total ao\nAMF. Assim, geralmente, não será necessária uma alteração na dose de micofenolato\nde mofetil na ausência de evidência clínica de disfunção do enxerto. Contudo, deve ser\nefetuada uma monitorização clínica apertada durante a combinação e logo após o\ntratamento com antibiótico.\n"
+        },
+        "necessaria_calculo": true
+      },
+      {
+        "id": "probenecida_desconhecida",
+        "condicao": {
+          "parametro": "uso_probenecida",
+          "operador": "==",
+          "valor": "Não avaliada"
+        },
+        "tipo": "bloqueio",
+        "mensagem": "Confirmar utilização de probenecida. As restantes interações ainda não estão avaliadas.",
+        "fonte": {
+          "documento": "documento.pdf",
+          "secao": "4.5",
+          "paginas": [
+            7
+          ],
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.5 Interações medicamentosas e outras formas de interação\n\nAnticoagulantes orais\n\nAnticoagulantes orais e antibióticos da família da penicilina têm sido amplamente\nutilizados na práctica clínica sem notificações de interação. Contudo, na literatura\nexistem casos de aumento da relação normalizada internacional em doentes a tomar\nacenocoumarol ou varfarina aos quais foi prescrita uma terapêutica de amoxicilina. Se a\nadministração concomitante for necessária, o tempo de protrombina ou a relação\nnormalizada internacional deve ser cuidadosamente monitorizada com a adição ou\nretirada da amoxicilina. Adicionalmente, ajustes na dose dos anticoagulantes orais\npoderão ser necessários (ver secções 4.4 e 4.8).\n\nMetotrexato\n\nAs penicilinas podem reduzir a excreção do metotrexato provocando um potencial\naumento da toxicidade.\n\nProbenecida\n\nNão se recomenda a administração concomitante de probenecida. A probenecida\ndiminui a secreção tubular renal da amoxicilina. O seu concomitante de probenecida\ncom amoxicilina/ácido clavulânico pode resultar no aumento e prolongamento dos\nníveis sanguíneos da amoxicilina, mas não dos do ácido clavulânico.\n\nMicofenolato de mofetil\n\nEm doentes a tomar micofenolato de mofetil, após o início de amoxicilina mais ácido\nclavulânico por via oral, foi notificada uma redução de aproximadamente 50% na\nconcentração pré-dose do metabolito ativo ácido micofenólico (AMF). A alteração do\nnível da pré-dose poderá não representar com precisão alterações na exposição total ao\nAMF. Assim, geralmente, não será necessária uma alteração na dose de micofenolato\nde mofetil na ausência de evidência clínica de disfunção do enxerto. Contudo, deve ser\nefetuada uma monitorização clínica apertada durante a combinação e logo após o\ntratamento com antibiótico.\n"
+        },
+        "necessaria_calculo": true
+      }
+    ],
+    "esquemas": [
+      {
+        "id": "otite_habitual",
+        "nome": "Intervalo habitual — otite média aguda",
+        "estado": "por_rever",
+        "condicao": {
+          "todas": [
+            {
+              "parametro": "indicacao",
+              "operador": "==",
+              "valor": "Otite média aguda"
+            },
+            {
+              "parametro": "idade_meses",
+              "operador": ">=",
+              "valor": 2
+            },
+            {
+              "parametro": "peso_kg",
+              "operador": "<",
+              "valor": 40
+            }
+          ]
+        },
+        "dose": {
+          "componente": "Amoxicilina",
           "minimo": 25,
           "maximo": 45,
           "unidade": "mg/kg/dia",
-          "administracoes_dia": 2
+          "administracoes_dia": 2,
+          "concentracao_mg_ml": 80
         },
-        "estado_validacao": "Por rever",
         "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
           "secao": "4.2",
-          "paginas": [2, 3]
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
         }
       }
     ],
-    "fonte": {
-      "documento": "RCM de Augmentin Duo 400 mg/57 mg/5 ml",
-      "url": "",
-      "ficheiro": "documento.pdf",
-      "secao_concentracao": "2",
-      "pagina_concentracao": 1,
-      "data_revisao": null
-    }
+    "informacoes": [
+      {
+        "titulo": "Administração e duração",
+        "texto": "Administrar com uma refeição e agitar antes de cada dose. Não prolongar além de 14 dias sem reavaliação; duração depende da resposta.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.2 Posologia e modo de administração\n\nPosologia\n\nAs doses estão expressas em termos de conteúdo de amoxicilina/ácido clavulânico\nexceto quando forem apresentadas em termos de componentes individuais.\n\nA dose de Augmentin selecionada para tratar uma infeção específica deve ter em\nconsideração:\n\n• Os patogénios expectáveis e a sua suscetibilidade provável aos agentes\nantibacterianos (ver secção 4.4)\n• A gravidade e o local da infeção\n• A idade, peso e função renal do doente, conforme descrito abaixo.\n\nO uso de formulações alternativas de Augmentin (por exemplo, formulações com teores\nmais elevados de amoxicilina e/ou rácios amoxicilina/ácido clavulânico diferentes)\ndeve ser tido em consideração conforme necessário (ver secções 4.4 e 5.1).\n\nPara crianças < 40 kg, esta formulação de Augmentin providencia uma dose máxima\ndiária de 1000-2800 mg de amoxicilina e 143-400 mg de ácido clavulânico, quando\nadministrada conforme as recomendações abaixo. Se for considerada necessária uma\ndose diária mais elevada de amoxicilina, recomenda-se a seleção de outra formulação\nde Augmentin para evitar a administração de doses diárias desnecessariamente elevadas\nde ácido clavulânico (ver secções 4.4 e 5.1).\n\nA duração do tratamento deve ser determinada pela resposta do doente. Algumas\ninfeções (por exemplo osteomielite) requerem períodos mais longos de tratamento. O\ntratamento não deve estender-se por um período superior a 14 dias sem nova avaliação\n(ver secção 4.4 referente a tratamento prolongado).\n\nCrianças ≥ 40 kg devem ser tratadas com as formulações de Augmentin para adultos.\n\nCrianças < 40 kg\n\nAs crianças podem ser tratadas com Augmentin em comprimidos, suspensões ou\nsaquetas pediátricas.\n\nDoses recomendadas:\n\n• 25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses;\n\n• até 70 mg/10 mg/kg/dia divididos por 2 doses pode ser considerado para algumas\ninfeções (tais como otite média, sinusite e infeções do trato respiratório inferior).\n\nNão estão disponíveis dados clínicos para dosagens superiores a 45 mg/6,4 mg/kg/dia\nde formulações de Augmentin 7:1 em crianças com idade inferior a 2 anos.\nNão estão disponíveis dados clínicos para formulações de Augmentin 7:1 em crianças\ncom idade inferior a 2 meses. Consequentemente, não poderão ser feitas recomendações\nde dose para esta população.\n\nIdosos\n\nNão é necessário nenhum ajuste de dose.\n\nCompromisso renal\n\nNão é necessário nenhum ajuste de dose em doentes com depuração de creatinina\n(ClCr) superior a 30 ml/min.\n\nEm doentes com depuração de creatinina inferior a 30 ml/min, o uso de formulações de\nAugmentin com rácio 7:1 de amoxicilina/ácido clavulânico não é recomendado, uma\nvez que não estão disponíveis recomendações para ajustes de dose.\n\nCompromisso hepático\n\nDosear com precaução e monitorizar a função hepática em intervalos regulares (ver\nsecções 4.3 e 4.4).\n\nModo de administração\n\nAugmentin deve ser administrado por via oral.\n\nAugmentin deve ser administrado com uma refeição para minimizar a potencial\nintolerância gastrointestinal.\n\nA terapêutica pode ser iniciada parentericamente de acordo com o RCM da formulação\nintravenosa e continuada com uma formulação oral.\n\nAgitar para soltar o pó, adicionar água conforme indicações, inverter e agitar.\nAgitar o frasco antes de cada dose (ver secção 6.6).\n\nPara instruções acerca da reconstituição do medicamento antes da administração, ver\nsecção 6.6.\n"
+        }
+      },
+      {
+        "titulo": "Interações a rever",
+        "texto": "Probenecida: associação não recomendada. O RCM também descreve interações com anticoagulantes orais, metotrexato e micofenolato. Não existe ainda verificador completo.",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.5",
+          "paginas": [
+            7
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar",
+          "sha256": "eb57a6490227e82c547a0e2b3778e52946609a2e61501085cea095df463fb6f8",
+          "excerto_secao": "4.5 Interações medicamentosas e outras formas de interação\n\nAnticoagulantes orais\n\nAnticoagulantes orais e antibióticos da família da penicilina têm sido amplamente\nutilizados na práctica clínica sem notificações de interação. Contudo, na literatura\nexistem casos de aumento da relação normalizada internacional em doentes a tomar\nacenocoumarol ou varfarina aos quais foi prescrita uma terapêutica de amoxicilina. Se a\nadministração concomitante for necessária, o tempo de protrombina ou a relação\nnormalizada internacional deve ser cuidadosamente monitorizada com a adição ou\nretirada da amoxicilina. Adicionalmente, ajustes na dose dos anticoagulantes orais\npoderão ser necessários (ver secções 4.4 e 4.8).\n\nMetotrexato\n\nAs penicilinas podem reduzir a excreção do metotrexato provocando um potencial\naumento da toxicidade.\n\nProbenecida\n\nNão se recomenda a administração concomitante de probenecida. A probenecida\ndiminui a secreção tubular renal da amoxicilina. O seu concomitante de probenecida\ncom amoxicilina/ácido clavulânico pode resultar no aumento e prolongamento dos\nníveis sanguíneos da amoxicilina, mas não dos do ácido clavulânico.\n\nMicofenolato de mofetil\n\nEm doentes a tomar micofenolato de mofetil, após o início de amoxicilina mais ácido\nclavulânico por via oral, foi notificada uma redução de aproximadamente 50% na\nconcentração pré-dose do metabolito ativo ácido micofenólico (AMF). A alteração do\nnível da pré-dose poderá não representar com precisão alterações na exposição total ao\nAMF. Assim, geralmente, não será necessária uma alteração na dose de micofenolato\nde mofetil na ausência de evidência clínica de disfunção do enxerto. Contudo, deve ser\nefetuada uma monitorização clínica apertada durante a combinação e logo após o\ntratamento com antibiótico.\n"
+        }
+      }
+    ],
+    "perguntas": [
+      {
+        "id": "clcr_ml_min",
+        "texto": "Qual a ClCr avaliada em ml/min?",
+        "tipo": "numero",
+        "opcoes": [
+          "Não avaliada",
+          "Não",
+          "Sim"
+        ],
+        "fonte": {
+          "documento": "documento.pdf",
+          "secao": "4.2",
+          "paginas": [
+            3
+          ]
+        },
+        "ajuda": "Não introduzir diretamente eTFG em ml/min/1,73 m². O protótipo não converte nem estima função renal.",
+        "fonte_extra": "4.2",
+        "explicacao": "O RCM desta apresentação distingue orientações conforme a depuração de creatinina. A informação geral sobre a situação renal não permite verificar esse limiar. Se não dispuser de um valor compatível, deixe em branco; a análise indicará a pendência."
+      },
+      {
+        "id": "alergia_relevante",
+        "texto": "Há hipersensibilidade às substâncias/penicilinas ou reação imediata grave a outro beta-lactâmico?",
+        "tipo": "escolha",
+        "opcoes": [
+          "Não avaliada",
+          "Não",
+          "Sim"
+        ],
+        "fonte": {
+          "documento": "documento.pdf",
+          "secao": "4.3",
+          "paginas": [
+            4
+          ]
+        },
+        "explicacao": "A história de hipersensibilidade faz parte das contraindicações descritas para este medicamento. A resposta permite verificar se é necessário assinalar essa restrição."
+      },
+      {
+        "id": "historia_hepatica_associada",
+        "texto": "Há história de icterícia/compromisso hepático devido a amoxicilina/clavulanato?",
+        "tipo": "escolha",
+        "opcoes": [
+          "Não avaliada",
+          "Não",
+          "Sim"
+        ],
+        "fonte": {
+          "documento": "documento.pdf",
+          "secao": "4.3",
+          "paginas": [
+            4
+          ]
+        },
+        "explicacao": "O RCM distingue compromisso hepático atual de uma história de lesão hepática associada a esta combinação. Precisamos de avaliar especificamente esse antecedente."
+      },
+      {
+        "id": "uso_probenecida",
+        "texto": "O paciente toma probenecida?",
+        "tipo": "escolha",
+        "opcoes": [
+          "Não avaliada",
+          "Não",
+          "Sim"
+        ],
+        "fonte": {
+          "documento": "documento.pdf",
+          "secao": "4.5",
+          "paginas": [
+            7
+          ]
+        },
+        "explicacao": "O RCM descreve uma interação com probenecida e não recomenda a administração concomitante. Esta pergunta verifica apenas essa interação; não substitui a revisão de toda a medicação."
+      }
+    ],
+    "informacao_materna": {
+      "gravidez": {
+        "texto": "Os estudos em animais não indicam quaisquer efeitos nefastos diretos ou indiretos no que respeita à gravidez, ao desenvolvimento embrionário/fetal, parto ou ao desenvolvimento pós-natal (ver secção 5.3). Dados limitados relacionados com o uso de amoxicilina/ácido clavulânico durante a gravidez em humanos não indicam existir risco acrescido de mal-formações congénitas. Num único estudo realizado em mulheres com rutura prematura da membrana fetal antes do final da gravidez, foram notificados casos em que o tratamento profilático com amoxicilina/ácido clavulânico, pode estar associado ao aumento do risco de enterocolite necrotizante nos recém-nascidos. Deve evitar-se o uso de Augmentin durante a gravidez, a não ser que o médico considere essencial a sua prescrição.",
+        "fonte": {
+          "documento": "documento.pdf",
+          "secao": "4.6",
+          "paginas": [
+            8
+          ]
+        }
+      },
+      "aleitamento": {
+        "texto": "Ambas as substâncias são excretadas no leite materno (nada se sabe sobre os efeitos do ácido clavulânico em lactentes). Consequentemente, na eventualidade de ocorrer diarreia e infeções fúngicas das membranas mucosas do lactente, a amamentação poderá ter de ser interrompida. Deve ser tida em consideração a possibilidade de sensibilização. Amoxicilina/ácido clavulânico só devem ser administrados durante o período de amamentação após avaliação risco/benefício por parte do médico.",
+        "fonte": {
+          "documento": "documento.pdf",
+          "secao": "4.6",
+          "paginas": [
+            8
+          ]
+        }
+      }
+    },
+    "indicacao_demo": "Otite média aguda"
+  },
+  {
+    "id": "sintetico_0",
+    "nome": "Exemplo fictício — superfície corporal",
+    "apresentacao": "Exclusivamente teste de software; não é medicamento",
+    "estado": "ficticio",
+    "regras": [
+      {
+        "id": "parametro_positivo",
+        "condicao": {
+          "parametro": "superficie_m2",
+          "operador": "<=",
+          "valor": 0
+        },
+        "tipo": "bloqueio",
+        "mensagem": "Parâmetro inválido",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: parametro_positivo"
+      }
+    ],
+    "esquemas": [
+      {
+        "id": "teste",
+        "nome": "Esquema fictício de teste",
+        "estado": "ficticio",
+        "condicao": {
+          "parametro": "indicacao",
+          "operador": "==",
+          "valor": "Teste de engenharia"
+        },
+        "dose": {
+          "componente": "Substância fictícia",
+          "minimo": 10,
+          "maximo": 20,
+          "unidade": "mg/m2/dia",
+          "administracoes_dia": 2
+        },
+        "fonte": {
+          "documento": "Exemplo inventado para teste; sem RCM"
+        }
+      }
+    ],
+    "informacoes": [],
+    "perguntas": [
+      {
+        "id": "superficie_m2",
+        "texto": "Superfície corporal em m² — caso fictício",
+        "tipo": "numero",
+        "fonte": {
+          "documento": "Exemplo fictício de engenharia"
+        },
+        "explicacao": "Este exemplo fictício testa um esquema baseado na superfície corporal. O dado só é pedido porque o medicamento de demonstração selecionado o utiliza."
+      }
+    ]
+  },
+  {
+    "id": "sintetico_1",
+    "nome": "Exemplo fictício — dose fixa",
+    "apresentacao": "Exclusivamente teste de software; não é medicamento",
+    "estado": "ficticio",
+    "regras": [
+      {
+        "id": "parametro_positivo",
+        "condicao": {
+          "parametro": "peso_kg",
+          "operador": "<=",
+          "valor": 0
+        },
+        "tipo": "bloqueio",
+        "mensagem": "Parâmetro inválido",
+        "fonte": {
+          "documento": "documento.pdf enviado pela equipa",
+          "secao": "4.2",
+          "paginas": [
+            2,
+            3
+          ],
+          "data_revisao": null,
+          "estado": "extração preliminar"
+        },
+        "necessaria_calculo": true,
+        "se_desconhecido": "Completar informação para avaliar: parametro_positivo"
+      }
+    ],
+    "esquemas": [
+      {
+        "id": "teste",
+        "nome": "Esquema fictício de teste",
+        "estado": "ficticio",
+        "condicao": {
+          "parametro": "indicacao",
+          "operador": "==",
+          "valor": "Teste de engenharia"
+        },
+        "dose": {
+          "componente": "Substância fictícia",
+          "minimo": 5,
+          "maximo": 10,
+          "unidade": "mg/dia",
+          "administracoes_dia": 2
+        },
+        "fonte": {
+          "documento": "Exemplo inventado para teste; sem RCM"
+        }
+      }
+    ],
+    "informacoes": [],
+    "perguntas": []
+  },
+  {
+    "id": "gentamicina_labesfal_80_2",
+    "nome": "Gentamicina Labesfal",
+    "substancia_ativa": "Gentamicina",
+    "apresentacao": "80 mg/2 mL · solução injetável IV/IM",
+    "regras": [
+      {
+        "id": "gentamicina_funcao_renal",
+        "condicao": {
+          "parametro": "funcao_renal",
+          "operador": "!=",
+          "valor": "Função renal normal confirmada"
+        },
+        "tipo": "bloqueio",
+        "mensagem": "O cálculo deste piloto cobre função renal normal. Ajuste renal indisponível.",
+        "se_desconhecido": "Confirma a função renal para calcular.",
+        "fonte": {
+          "documento": "RCM Gentamicina Labesfal · cópia aprovada em 07-05-2021",
+          "secao": "4.2",
+          "url": "https://cdn.shopk.it/usercontent/plataforma-de-pedidos/media/files/7ee1a03-122637-gentamicina-80-mg-2-ml.pdf"
+        }
+      }
+    ],
+    "esquemas": [
+      {
+        "nome": "Recém-nascidos · dose diária única",
+        "estado": "por_rever",
+        "fonte": {
+          "documento": "RCM Gentamicina Labesfal · cópia aprovada em 07-05-2021",
+          "secao": "4.2",
+          "url": "https://cdn.shopk.it/usercontent/plataforma-de-pedidos/media/files/7ee1a03-122637-gentamicina-80-mg-2-ml.pdf"
+        },
+        "condicao": {
+          "todas": [
+            {
+              "parametro": "idade_meses",
+              "operador": ">=",
+              "valor": 0
+            },
+            {
+              "parametro": "idade_meses",
+              "operador": "<",
+              "valor": 1
+            }
+          ]
+        },
+        "dose": {
+          "componente": "Gentamicina",
+          "unidade": "mg/kg/dia",
+          "minimo": 4,
+          "maximo": 7,
+          "administracoes_dia": 1
+        }
+      },
+      {
+        "nome": "Bebés · dose diária única preferencial",
+        "estado": "por_rever",
+        "fonte": {
+          "documento": "RCM Gentamicina Labesfal · cópia aprovada em 07-05-2021",
+          "secao": "4.2",
+          "url": "https://cdn.shopk.it/usercontent/plataforma-de-pedidos/media/files/7ee1a03-122637-gentamicina-80-mg-2-ml.pdf"
+        },
+        "condicao": {
+          "todas": [
+            {
+              "parametro": "idade_meses",
+              "operador": ">=",
+              "valor": 1
+            },
+            {
+              "parametro": "idade_meses",
+              "operador": "<",
+              "valor": 24
+            }
+          ]
+        },
+        "dose": {
+          "componente": "Gentamicina",
+          "unidade": "mg/kg/dia",
+          "minimo": 4.5,
+          "maximo": 7.5,
+          "administracoes_dia": 1
+        }
+      },
+      {
+        "nome": "Crianças e adolescentes · dose diária única preferencial",
+        "estado": "por_rever",
+        "fonte": {
+          "documento": "RCM Gentamicina Labesfal · cópia aprovada em 07-05-2021",
+          "secao": "4.2",
+          "url": "https://cdn.shopk.it/usercontent/plataforma-de-pedidos/media/files/7ee1a03-122637-gentamicina-80-mg-2-ml.pdf"
+        },
+        "condicao": {
+          "todas": [
+            {
+              "parametro": "idade_meses",
+              "operador": ">=",
+              "valor": 24
+            },
+            {
+              "parametro": "idade_meses",
+              "operador": "<",
+              "valor": 216
+            }
+          ]
+        },
+        "dose": {
+          "componente": "Gentamicina",
+          "unidade": "mg/kg/dia",
+          "minimo": 3,
+          "maximo": 6,
+          "administracoes_dia": 1
+        }
+      },
+      {
+        "nome": "Esquema adulto, incluindo idosos · dose diária única preferencial",
+        "estado": "por_rever",
+        "fonte": {
+          "documento": "RCM Gentamicina Labesfal · cópia aprovada em 07-05-2021",
+          "secao": "4.2",
+          "url": "https://cdn.shopk.it/usercontent/plataforma-de-pedidos/media/files/7ee1a03-122637-gentamicina-80-mg-2-ml.pdf"
+        },
+        "condicao": {
+          "parametro": "idade_meses",
+          "operador": ">=",
+          "valor": 216
+        },
+        "dose": {
+          "componente": "Gentamicina",
+          "unidade": "mg/kg/dia",
+          "minimo": 3,
+          "maximo": 6,
+          "administracoes_dia": 1
+        }
+      }
+    ],
+    "informacoes": [
+      {
+        "titulo": "Faixas usadas para a dose de gentamicina",
+        "texto": "Para selecionar a dose demonstrativa, o motor usa menos de 1 mês, 1 a menos de 24 meses, 2 a menos de 18 anos e 18 anos ou mais. O esquema adulto inclui pessoas idosas. O corte aos 2 anos é uma convenção do protótipo: o RCM não indica a idade final da faixa de bebés. A entrada em anos decimais não distingue exatamente o 28.º dia do primeiro mês de vida. É apresentado o esquema de uma administração diária.",
+        "fonte": {
+          "documento": "RCM Gentamicina Labesfal · cópia aprovada em 07-05-2021",
+          "secao": "4.2",
+          "url": "https://cdn.shopk.it/usercontent/plataforma-de-pedidos/media/files/7ee1a03-122637-gentamicina-80-mg-2-ml.pdf"
+        }
+      },
+      {
+        "titulo": "Ajuste renal e monitorização",
+        "texto": "O RCM descreve duas estratégias: aumentar o intervalo ou reduzir a dose por administração. Em compromisso renal, refere utilização em situações de estrita necessidade e monitorização da função renal, auditiva e vestibular e das concentrações séricas.",
+        "fonte": {
+          "documento": "RCM Gentamicina Labesfal · cópia aprovada em 07-05-2021",
+          "secao": "4.2 e 4.4",
+          "url": "https://cdn.shopk.it/usercontent/plataforma-de-pedidos/media/files/7ee1a03-122637-gentamicina-80-mg-2-ml.pdf"
+        }
+      },
+      {
+        "titulo": "Contraindicações e interações a rever",
+        "texto": "O RCM lista alergia a aminoglicosídeos e miastenia gravis entre as contraindicações e chama a atenção para a associação com diuréticos muito ativos.",
+        "fonte": {
+          "documento": "RCM Gentamicina Labesfal",
+          "secao": "4.3 a 4.5",
+          "url": "https://cdn.shopk.it/usercontent/plataforma-de-pedidos/media/files/7ee1a03-122637-gentamicina-80-mg-2-ml.pdf"
+        }
+      }
+    ],
+    "opcoes_funcao_renal": [
+      "Função renal normal confirmada",
+      "Compromisso renal referido"
+    ]
   }
 ]

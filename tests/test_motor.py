@@ -4,7 +4,7 @@ from motor import analisar, avaliar, calcular_intervalo
 class TestMotor(unittest.TestCase):
  def setUp(self):
   self.m=carregar_medicamentos()[0]
-  self.p=dict(idade=4,unidade_idade='Anos',peso_kg=20,indicacao='Otite média aguda',clcr_ml_min=60,funcao_hepatica='Sem compromisso conhecido',alergia_relevante='Não',historia_hepatica_associada='Não')
+  self.p=dict(idade=4,unidade_idade='Anos',peso_kg=20,indicacao='Otite média aguda',clcr_ml_min=60,funcao_hepatica='Sem compromisso conhecido',alergia_relevante='Não',historia_hepatica_associada='Não',uso_probenecida='Não')
  def test_validacao(self): self.assertEqual(analisar(self.p,self.m)['calculos'],[])
  def test_demo(self):
   c=analisar(self.p,self.m,True)['calculos'][0]

@@ -27,3 +27,7 @@ flowchart TD
 regra definir um limite de dose, acrescentamos um caso que chegue a esse limite.
 
 separar o cálculo da interface. A app web em React envia o caso à API em python, que aplica a regra validada e devolve o resultado. Para o primeiro teste, os dados do episódio vêm de uma simulação.
+
+## Protótipo web
+
+Executa `python3 web_app.py` e abre <http://127.0.0.1:8765>. Usa apenas casos fictícios.

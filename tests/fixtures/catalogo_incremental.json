@@ -1,0 +1,9 @@
+{
+  "tipo": "incremental",
+  "base": "demo-1",
+  "versao": "demo-2",
+  "apresentacoes": [
+    {"id":"demo-002","nome":"Medicamento fictício B","substancia_ativa":"Substância fictícia B","apresentacao":"Nova apresentação demonstrativa","fonte_catalogo":"Dados fictícios"}
+  ],
+  "removidas": ["demo-001"]
+}

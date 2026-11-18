@@ -27,14 +27,35 @@ def avaliar(condicao, contexto):
         raise ValueError('Tipos incompatíveis na condição') from erro
 
 
+MESES_POR_UNIDADE = {'Dias': 12 / 365.25, 'Meses': 1, 'Anos': 12}
+
+
+def faixa_etaria(idade, unidade):
+    if idade is None or unidade not in MESES_POR_UNIDADE or idade < 0:
+        return None
+    meses = idade * MESES_POR_UNIDADE[unidade]
+    dias = idade if unidade == 'Dias' else meses * 365.25 / 12
+    if dias < 28:
+        return 'Recém-nascido (classificação de termo)'
+    if meses < 24:
+        return 'Lactente / primeira infância'
+    if meses < 144:
+        return 'Criança'
+    if meses < 216:
+        return 'Adolescente'
+    if meses < 65 * 12:
+        return 'Adulto'
+    return 'Pessoa idosa (65 anos ou mais)'
+
+
 def preparar_contexto(paciente):
     contexto = dict(paciente)
     idade = paciente.get('idade')
     unidade = paciente.get('unidade_idade')
-    if idade is None or unidade not in ('Anos', 'Meses'):
+    if idade is None or unidade not in MESES_POR_UNIDADE:
         contexto['idade_meses'] = None
     else:
-        contexto['idade_meses'] = idade * 12 if unidade == 'Anos' else idade
+        contexto['idade_meses'] = idade * MESES_POR_UNIDADE[unidade]
     for campo in ('idade_meses', 'peso_kg', 'altura_cm', 'clcr_ml_min', 'superficie_m2'):
         valor = contexto.get(campo)
         if valor is not None:
