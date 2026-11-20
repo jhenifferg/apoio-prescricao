@@ -1,0 +1,69 @@
+gentamicina-labesfal-80mg-2ml.pdf
+
+PDF usado na extração: https://cdn.shopk.it/usercontent/plataforma-de-pedidos/media/files/7ee1a03-122637-gentamicina-80-mg-2-ml.pdf
+
+Secção 4.2 — Posologia e modo de administração
+
+Páginas identificadas no PDF: 2, 3
+Conferir a completude e a ordem do texto e das tabelas com o PDF original.
+
+
+Página 2 do PDF
+
+4.2 Posologia e modo de administração
+
+Posologia
+
+A dose diária recomendada nas crianças, adolescentes e adultos, com função renal
+normal, é 3-6 mg/kg de peso corporal por dia em uma (preferencial) ou até duas doses
+únicas.
+
+A dose diária em bebés após o primeiro mês de vida é 4,5-7,5 mg/kg de peso corporal em
+uma (preferencial) ou até duas doses únicas.
+A dose diária em recém-nascidos é de 4-7 mg/kg de peso corporal. Dada a maior
+semivida, os recém-nascidos devem receber a dose diária necessária numa dose única.
+
+- Insuficientes renais:
+- Em doentes com alterações da função renal a dose diária recomendada deve ser
+diminuída e ajustada à função renal. Vigiar de forma regular as funções renal, coclear e
+vestibular e realizar na medida do possível as dosagens séricas de controlo. Os valores da
+creatinina sérica ou de clearance da creatinina endógena, são os melhores testes para
+avaliar o estado da função renal e proceder a uma adaptação na posologia da gentamicina.
+Adaptação da posologia em função dos valores da creatinina sérica:
+• conservando uma dose unitária de 1 mg/kg e aumentando o espaço entre as injeções. O
+intervalo (em horas) entre duas doses unitárias é obtido multiplicando por 0,8 o valor da
+creatinina sérica (em mg/l).
+• conservando um intervalo de 8 horas entre as injeções e reduzindo a dose unitária
+administrada. Neste caso, após uma dose de ataque de 1 mg/kg, administra-se de 8 em 8
+horas uma dose reduzida obtida pela divisão da dose de ataque pela décima parte do valor
+da creatinina sérica (em mg/l).
+Na hemodiálise periódica: injeção única de 1 mg/kg por via intravenosa lenta, no final de
+cada sessão.
+Na diálise peritoneal: injeção inicial de 1 mg/kg por via intramuscular; no curso da
+diálise, as perdas são compensadas juntando 5 a 10 mg de gentamicina por litro de
+líquido de diálise.
+
+Página 3 do PDF
+
+APROVADO EM
+07-05-2021
+INFARMED
+
+
+É recomendável que as concentrações séricas de gentamicina sejam monitorizadas,
+especialmente em idosos, recém-nascidos e em doentes com a função renal
+comprometida. As amostras deverão ser retiradas no final de cada intervalo entre doses
+(concentrações mínimas). As concentrações mínimas de gentamicina não devem exceder
+2 micrograma/ml quando administrada duas vezes por dia e 1 micrograma/ml quando
+administrada numa única dose diária.
+
+Modo de administração
+
+A via intramuscular é a via de eleição.
+Deve ser sempre utilizada, desde que seja acessível. Se for impraticável, pode ser
+utilizada a via intravenosa em perfusão descontínua: a quantidade de gentamicina a
+administrar é de 1 mg/kg diluída em soro fisiológico ou glicosado isotónico (pelo menos
+1 ml de soro para 1 mg de antibiótico, ou seja, no adulto: cerca de 100 a 200 ml de soro.
+Esta perfusão deve durar entre 30 a 60 minutos e deve ser renovada:
+- todas as 8 horas nos sujeitos normais;
+- a intervalos de tempo maiores nos insuficientes renais.
