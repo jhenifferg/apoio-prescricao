@@ -1,0 +1,55 @@
+{
+  "estado": "pendente_revisao",
+  "propostas": [
+    {
+      "apresentacao": "Augmentin Duo 400 mg/57 mg/5 mL, pó para suspensão oral",
+      "esquema": "Intervalo pediátrico de referência no RCM",
+      "populacao": "Crianças com menos de 40 kg",
+      "via": "oral",
+      "dose": [
+        {"substancia": "amoxicilina", "minimo": 25, "maximo": 45, "unidade": "mg/kg/dia"},
+        {"substancia": "ácido clavulânico", "minimo": 3.6, "maximo": 6.4, "unidade": "mg/kg/dia"}
+      ],
+      "administracoes_por_dia": [2],
+      "condicoes": {"peso_kg": {"inferior_a": 40}},
+      "fonte": [
+        {
+          "leitura": "leituras-rcm/augmentin-duo-400mg-57mg-5ml.txt",
+          "secao": "4.2",
+          "pagina": 2,
+          "excerto": "25 mg/3,6 mg/kg/dia a 45 mg/6,4 mg/kg/dia divididos por 2 doses"
+        }
+      ],
+      "pontos_para_revisao": [
+        {"pagina": 3, "descricao": "O RCM não apresenta recomendação para crianças com menos de 2 meses."},
+        {"pagina": 3, "descricao": "O texto distingue ClCr inferior e superior a 30 mL/min. Confirmar como tratar o valor exato de 30 antes de parametrizar a condição."},
+        {"pagina": 3, "descricao": "A indicação concreta, os esquemas alternativos e as condições em compromisso hepático ficam por rever."}
+      ]
+    },
+    {
+      "apresentacao": "Gentamicina Labesfal 80 mg/2 mL, solução injetável",
+      "esquema": "Intervalo diário para crianças, adolescentes e adultos com função renal normal",
+      "populacao": "Crianças, adolescentes e adultos",
+      "via": null,
+      "dose": [
+        {"substancia": "gentamicina", "minimo": 3, "maximo": 6, "unidade": "mg/kg/dia"}
+      ],
+      "administracoes_por_dia": [1, 2],
+      "frequencia_preferencial": 1,
+      "condicoes": {"funcao_renal": "normal"},
+      "fonte": [
+        {
+          "leitura": "leituras-rcm/gentamicina-labesfal-80mg-2ml.txt",
+          "secao": "4.2",
+          "pagina": 2,
+          "excerto": "3-6 mg/kg de peso corporal por dia em uma (preferencial) ou até duas doses únicas"
+        }
+      ],
+      "pontos_para_revisao": [
+        {"pagina": 2, "descricao": "O RCM apresenta esquemas próprios para bebés e recém-nascidos. Confirmar os limites etários antes de converter a população num filtro numérico."},
+        {"pagina": 3, "descricao": "Conferir a via e as condições específicas de administração antes de integrar o esquema."},
+        {"pagina": 2, "descricao": "Compromisso renal requer revisão de um esquema separado."}
+      ]
+    }
+  ]
+}
